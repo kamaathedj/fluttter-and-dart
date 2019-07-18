@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:try_kalle/DetailsPage.dart';
 import 'data.dart';
+import 'package:try_kalle/popUp.dart';
 // import 'model.dart';
 
 void main() => runApp(MyApp());
@@ -72,9 +73,9 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: <Widget>[
           Padding(padding: EdgeInsets.symmetric(horizontal: 60),),
           IconButton(
-            icon: Icon(Icons.more_vert),
-            onPressed: (){Scaffold.of(context).showSnackBar(SnackBar(content: Text('clicked'),));},
-          )
+          icon: Icon(Icons.more_vert),
+          onPressed: (){Pop();},
+            )
         ],
         
       ),

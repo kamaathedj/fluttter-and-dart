@@ -72,10 +72,11 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         actions: <Widget>[
           Padding(padding: EdgeInsets.symmetric(horizontal: 60),),
-          IconButton(
-          icon: Icon(Icons.more_vert),
-          onPressed: (){Pop();},
-            )
+          Pop()
+          // IconButton(
+          // icon: Icon(Icons.more_vert),
+          // onPressed: (){Pop();},
+            // )
         ],
         
       ),

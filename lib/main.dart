@@ -71,7 +71,10 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         actions: <Widget>[
           Padding(padding: EdgeInsets.symmetric(horizontal: 60),),
-          Icon(Icons.more_vert)
+          IconButton(
+            icon: Icon(Icons.more_vert),
+            onPressed: (){Scaffold.of(context).showSnackBar(SnackBar(content: Text('clicked'),));},
+          )
         ],
         
       ),

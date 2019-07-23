@@ -4,7 +4,10 @@ import 'package:flutter/widgets.dart';
 import 'package:try_kalle/DetailsPage.dart';
 import 'data.dart';
 import 'package:try_kalle/popUp.dart';
-// import 'model.dart';
+import 'product.dart';
+
+
+import 'model.dart';
 
 void main() => runApp(MyApp());
 
@@ -44,6 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
   List<String> news=[];
+  // Data data= Data(Data.fromJson(item));
   
   List<Data> _data=<Data>[];
   void initState() {
@@ -54,10 +58,14 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
   listenForData(){
-  print(product.getItems());
- 
+   
+  for (var item in items) {
+    Data data=Data.fromJson(item);
+    print(data.productName);
+    Pylon(data.productName.toString());  
   }
-
+  
+  }
  
   @override
   Widget build(BuildContext context) {
@@ -100,8 +108,14 @@ class _MyHomePageState extends State<MyHomePage> {
                               colors: Colors.amber,
                               size: 100
                             ),
-                            Text('Project Dashboard',style: TextStyle(fontSize: 25),),
+                            Text('Project Dashboard',style: TextStyle(fontSize: 15),),
                             // Pylon('meme'),
+                            FlatButton(
+                              child: Text('open list'),
+                              onPressed: (){
+                                 Navigator.push(context,MaterialPageRoute(builder: (context)=>Product(items)));
+                              },
+                            )
                           ],
                         ),
                       ),

@@ -18,12 +18,20 @@ class Pop extends StatelessWidget {
              PopupMenuItem(
                key: Key('settings'),
                child: ListTile(leading: Icon(Icons.settings),title: Text('Settings'),)
+             ),
+             CheckedPopupMenuItem(
+               checked: true,
+               child: Text('Enable dark mode'),
+               enabled: true,
              )
           ],
            position: RelativeRect.fromLTRB(100, 40, 10, 10),
            
         );
       },
+      initialValue: 1,
+      onSelected: (index){print(index);},
+      onCanceled: (){print('closed');},
       tooltip: 'meme',
       elevation: 20.0,
       icon: Icon(Icons.more_vert),
@@ -31,3 +39,4 @@ class Pop extends StatelessWidget {
       
   }
 }
+
